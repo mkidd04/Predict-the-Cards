@@ -1,0 +1,56 @@
+Given-When-Then Unit Tests -- G/W/T --- AAA Assemble A...? Assert?
+
+Given a Deck object
+-
+Then it has 52 cards
+
+APPROACH A
+
+Given the two of hearts and a guess that it is red
+When we verify the guess
+Then we get true
+
+Given the two of hearts and a guess that it is black
+When we verify the guess
+Then we get false
+
+APPROACH B
+
+Given the two of hearts
+When we guess that it is red
+Then we get true
+
+
+
+APPROACH A:
+class Guess {
+  public boolean isTrueFor(Card c) { ... }
+}
+A.1
+class HighLowGuess {
+  public boolean isTrueFor(Card c) { ... }
+}
+A.2
+class HighGuess {
+ public boolean isTrueFor(Card c) { ... }
+}
+class LowGuess {
+ public boolean isTrueFor(Card c) { ... }
+}
+
+
+APPROACH B:
+class Card {
+  public boolean guessColor(Color c) { ... }
+
+  public boolean guessIsHigher(Rank r) { ... }
+}
+
+
+SEPARABLE MODEL ARCHITECTURE  -- humble view
+
+MODEL VIEW CONTROLLER -- FXML (there are videos on this)
+ - It's possible to unit test controller (sometimes)
+
+ ...
+ Assertions.assertTrue(c.guessColor(Color.RED))
